@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'app/model/privilegios.class.php';
-class MvcController {   	   
+class PrincipalController {   	   
   
 	function load_template($modulo){
 		$pagina = $this->load_page('app/views/pageMenu1.php');

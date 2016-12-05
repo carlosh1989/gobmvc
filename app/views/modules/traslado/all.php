@@ -35,7 +35,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                             <?php foreach($this->traslado->all() as $p): ?>
+                             <?php foreach($this->decretos as $p): ?>
                                 <tr>
                                     
                                     <td><?php echo $p->descripcion; ?></td>
