@@ -1,5 +1,5 @@
 <?php
-
+use Jenssegers\Blade\Blade;
 require_once 'mvc.controller.php';
 
 class TrasladoController extends MvcController
@@ -14,9 +14,7 @@ class TrasladoController extends MvcController
     public function principal()
     {
         $this->decretos = $this->traslado->all('decretos');
-        $krumo = new Krumo;
-        $krumo->dump($this->decretos);
-        //$this->vista('all', 'Traslados');
+        $this->vista('all', 'Traslados');
     }
 
     public function create()
