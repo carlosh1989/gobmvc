@@ -1,0 +1,13 @@
+{
+    "name": "kennymartorres/gobmvc",
+    "require": {
+        "mmucklo/krumo": "^0.5.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "carlos silva",
+            "email": "elmorochez22@gmail.com"
+        }
+    ]
+}
