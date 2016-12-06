@@ -40,12 +40,29 @@ class MvcController {
         echo $pagina;
     }
 
-    function load_model($modelo)
+    function modelo($modelo)
     {
         $nombreModel = 'app/model/'.$modelo.'.class.php';
         include $nombreModel;
         return new $modelo();
     }
+
+    function ver_arreglo($arreglo)
+    {
+        $krumo = new Krumo;
+        $krumo->dump($arreglo);
+    }
+	
+	function ir($url)
+	{
+        header('Location: '.$url.'.php');
+	}
+	function ir_con_datos($url,$data)
+	{
+		$final = $url . ".php?" . http_build_query($data);
+		$query = urlencode(serialize($data));
+        header('Location: '.$final);
+	}
 
     function vista2($vista, $titulo)
     {

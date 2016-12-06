@@ -24,7 +24,7 @@
             </div>
             <div class="ibox-content">
                 <!--form name="persona_form" action="persona.php" method="post" class="form-horizontal"-->
-                <form id="modulo_form" name="modulo_form" action="traslado.php?a=store" method="post" class="form-horizontal">
+                <form id="modulo_form" action="traslado.php?a=store" method="post" class="form-horizontal">
 
                 	
                 	<!--input type="hidden" name="tipoFormulario" value="persona_form" /-->

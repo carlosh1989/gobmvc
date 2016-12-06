@@ -1,25 +1,23 @@
 <?php
-use Jenssegers\Blade\Blade;
 require_once 'mvc.controller.php';
 
 class TrasladoController extends MvcController
 {
-    private $model;
-
     public function __CONSTRUCT()
     {
-        $this->traslado = $this->load_model('traslado');
+        $this->traslado = $this->modelo('traslado');
+        $this->orm = $this->modelo('orm');
     }
     
     public function principal()
     {
-        $this->decretos = $this->traslado->all('decretos');
+        $this->decretos = $this->orm->todo('decretos');
         $this->vista('all', 'Traslados');
     }
 
     public function create()
     {
-        $this->decreto = $this->traslado->find(1,'decretos');
+        $this->decreto = $this->orm->buscar('decretos',1);
         $this->vista('create', 'Crear Nuevo Decreto');
     }
 
@@ -28,21 +26,49 @@ class TrasladoController extends MvcController
         extract($_POST);
         $data['numero'] = $numero;
         $data['descripcion'] = $descripcion;
-        var_dump($data);
-        $this->traslado->store($data);
-        $this->all = $this->traslado->all('decretos');
-        var_dump($this->all);
+        $this->orm->guardar('decretos',$data);
+        //$this->ir_con_datos('traslado',$data);
+        //$this->ver_arreglo($data);
+      /*  $table = "decretos";
+        $array = $data;
+       $str = "insert into $table ";
+       $strv = "";
+       while(list($name,$value) = each($array)) {
+
+           if(is_bool($value)) {
+                    $strn .= "$name,";
+                    $strv .= ($value ? "true":"false") . ",";
+                    continue;
+            };
+
+           if(is_string($value)) {
+                    $strn .= "$name,";
+                    $strv .= "'$value',";
+                    continue;
+            }
+           if (!is_null($value) and ($value != "")) {
+                    $strn .= "$name,";
+                    $strv .= "$value,";
+                    continue;
+           }
+       }
+
+       $strv[strlen($strv)-1] = '';
+       $str .= $strn . $strv;
+       echo $strn; //numero , descripcion
+       echo "<hr>";
+       echo $strv; //'259/16','333'*/
     }
 
     
     public function guardar()
     {
         var_dump($_REQUEST);
-        /*$_REQUEST['id'] > 0
-            ? $this->model->actualizar($_REQUEST)
-            : $this->model->registrar($_REQUEST);
+        $_REQUEST['id'] > 0
+            ? $this->traslado->actualizar($_REQUEST)
+            : $this->traslado->registrar($_REQUEST);
         
-        header('Location: rol.php');*/
+        header('Location: rol.php');
     }
     
     public function eliminar()

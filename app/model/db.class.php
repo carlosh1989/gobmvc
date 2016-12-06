@@ -22,13 +22,9 @@ class Database extends PDO
         } catch (PDOException $e) {
             echo  $e->getMessage();
         }
-    }
-    
-    public function conectar()
-    {   
-        $conectar = parent::__construct("pgsql:host=$this->host;port=$this->port;dbname=$this->dbname;user=$this->user;password=$this->pass");
-        return $conectar;
-    }    
+
+        $this->conectar =  pg_pconnect("host=".$this->host." port=".$this->port." dbname=".$this->dbname." user=".$this->user." password=".$this->pass."");
+    } 
  
  //función para cerrar una conexión pdo
     public function close_con()

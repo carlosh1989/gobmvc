@@ -17,44 +17,6 @@ class Traslado
         }
     }
 
-    public function all($table)
-    {
-        try {
-            $result = array();
-
-            $query = $this->pdo->prepare("SELECT * FROM " . $table . "");
-            $query->execute();
-
-            return $query->fetchAll(PDO::FETCH_OBJ);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
-
-    public function find($id,$table)
-    {
-        try {
-            $query = $this->pdo
-                      ->prepare("SELECT * FROM " . $table . " WHERE id = ?");
-                      
-            $query->execute(array($id));
-            return $query->fetch(PDO::FETCH_OBJ);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
-
-    public function eliminar($id)
-    {
-        try {
-            $query = $this->pdo
-                        ->prepare("DELETE FROM rol WHERE id = ?");
-            $query->execute(array($id));
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-    }
-
     public function actualizar($data)
     {
         try {
@@ -78,43 +40,67 @@ class Traslado
 
     public function store($data)
     {
-        
         try {
             $sql = "INSERT INTO decretos (numero, descripcion) 
 		            VALUES (?, ?)";
 
             $this->pdo->prepare($sql)
-             ->execute(array(
-                    $data["numero"],
-                    $data["descripcion"]
-                )
-            );
+             ->execute(array($data["numero"],$data["descripcion"]));
         //$this->registrarRolAccion($data);
         } catch (Exception $e) {
             die($e->getMessage());
         }
     }
-    /*function registrarRolAccion($data)
-	{
-		try 
-		{						
-			foreach($data[$i] as $key => $item)
-			{						
-				$sql = "insert into rol_accion (rol_id, modulo, accion) values (?, '?, ?)";
-				
-				$this->pdo->prepare($sql)
-			     ->execute(
-					array(
-						$data["rol"], 
-	                    $data["modulo"] 
-	                    $data["accion"]                                          
-	                )
-				);
-			}							
-		} catch (Exception $e) 
-		{
-			die($e->getMessage());
-		}	
-		
-	}*/
+
+
+    public function guardar($table,$array)
+    {
+       $str = "insert into $table ";
+       $strn = "(";
+       $strv = " VALUES (";
+       while(list($name,$value) = each($array)) {
+
+           if(is_bool($value)) {
+                    $strn .= "$name,";
+                    $strv .= ($value ? "true":"false") . ",";
+                    continue;
+            };
+
+           if(is_string($value)) {
+                    $strn .= "$name,";
+                    $strv .= "'$value',";
+                    continue;
+            }
+           if (!is_null($value) and ($value != "")) {
+                    $strn .= "$name,";
+                    $strv .= "$value,";
+                    continue;
+           }
+       }
+       $strn[strlen($strn)-1] = ')';
+       $strv[strlen($strv)-1] = ')';
+       $str .= $strn . $strv;
+echo $srt;
+        //echo $str;
+        //$query = $this->pdo->prepare($str);
+        //$query->execute();
+
+  /*      try {
+            $this->pdo->execute($str);
+        //$this->registrarRolAccion($data);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }*/
+
+        try {
+            $sql = "INSERT INTO decretos (numero, descripcion) 
+                    VALUES (?, ?)";
+
+            $this->pdo->prepare($sql)
+             ->execute(array($data["numero"],$data["descripcion"]));
+        //$this->registrarRolAccion($data);
+        } catch (Exception $e) {
+            die($e->getMessage());
+        }
+    }
 }
