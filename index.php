@@ -15,3 +15,4 @@ require 'app/controller/'.$nombreControlador.'.controller.php';
 $nombreClase = ucfirst($nombreControlador).'Controller';        
 $controller = new $nombreClase();
 $controller->$metodo(); 
+//asdassadd
