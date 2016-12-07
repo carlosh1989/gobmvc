@@ -23,18 +23,22 @@ class MvcController {
 
     function vista($vista, $titulo)
     {
-        $pagina = file_get_contents('app/views/templates/app.php');
+    	$this->baseUrl = "http://localhost/gobmvc/";
+    	ob_start();
+        include  'app/views/templates/app.php';
+        $pagina = ob_get_clean();
         $menu = file_get_contents('app/views/templates/menu.php');
         $pagina = preg_replace('/\#TITULO\#/ms', $titulo, $pagina);
         $pagina = preg_replace('/\#MENU\#/ms', $menu, $pagina);
-        ob_start();
+        
 		$nombre_archivo = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         //verificamos si en la ruta nos han indicado el directorio en el que se encuentra
         if (strpos($nombre_archivo, '/') !== false) {
             //de ser asi, lo eliminamos, y solamente nos quedamos con el nombre sin su extension
             $nombre_archivo = preg_replace('/\.php$/', '', array_pop(explode('/', $nombre_archivo)));
         }
-        include 'app/views/modules/'.$nombre_archivo.'/'.$vista.'.php';
+        ob_start();
+        include 'app/views/modules/traslado/'.$vista.'.php';
         $table = ob_get_clean();
         $pagina = preg_replace('/\#CONTENIDO\#/ms', $table, $pagina); 	
         echo $pagina;
