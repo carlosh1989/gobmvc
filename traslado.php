@@ -11,5 +11,5 @@ if (isset($_GET["a"]) and $_GET["a"]=="create") {
 } else if (isset($_GET["a"]) and $_GET["a"]=="guardar") {
     $controller->guardar();
 } else {
-    $controller->principal();
+    $controller->index();
 }

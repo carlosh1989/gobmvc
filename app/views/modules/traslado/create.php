@@ -25,12 +25,7 @@
             <div class="ibox-content">
                 <!--form name="persona_form" action="persona.php" method="post" class="form-horizontal"-->
                 <form id="modulo_form" action="traslado.php?a=store" method="post" class="form-horizontal">
-
-                	
-                	<!--input type="hidden" name="tipoFormulario" value="persona_form" /-->
-                	<input type="hidden" name="id" value="<?php echo $this->decreto->id; ?>" />
                     <div class="form-group"><label class="col-sm-2 control-label">Numero</label>
-
                         <div class="col-sm-10"><input type="text" class="form-control" name="numero" required value="<?php echo $this->decreto->numero; ?>"></div>
                     </div>
                     <div class="hr-line-dashed"></div>

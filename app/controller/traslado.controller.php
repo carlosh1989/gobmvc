@@ -9,7 +9,7 @@ class TrasladoController extends MvcController
         $this->orm = $this->modelo('orm');
     }
     
-    public function principal()
+    public function index()
     {
         $this->decretos = $this->orm->todo('decretos');
         $this->vista('all', 'Traslados');
@@ -22,10 +22,7 @@ class TrasladoController extends MvcController
 
     public function store()
     {
-        extract($_POST);
-        $data['numero'] = $numero;
-        $data['descripcion'] = $descripcion;
-        $this->orm->guardar('decretos',$data);
+        $this->orm->guardar('decretos', $_POST);
         $this->ir('traslado');
     }
     

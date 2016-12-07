@@ -1,17 +1,11 @@
 <?php 
-require 'app/controller/index.controller.php';
-    
-$mvc = new index_controller();
-if(isset($_POST["tipoFormulario"]))	
-{
-	if($_POST["tipoFormulario"]=="form_index_inicio")
-		//echo "entro";
-		$mvc->iniciarSesion($_POST);
-}
-else
-{
-	session_destroy();
-	$mvc->principal(0);
-}
+require_once __DIR__ . '/vendor/autoload.php';
+// Dividimos la URL.
+$requestURI = explode( '/', $_SERVER['REQUEST_URI'] );
+// Eliminamos los espacios del principio y final
+// y recalculamos los índices del vector.
+$requestURI = array_values( array_filter( $requestURI ) );
 
-?>
+$krumo = new Krumo;
+$krumo->dump($requestURI);
+
