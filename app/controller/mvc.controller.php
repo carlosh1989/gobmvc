@@ -16,9 +16,7 @@ class MvcController {
 
 	function load_template($modulo){
 		$pagina = $this->load_page('app/views/pageMenu1.php');
-		
 		return $pagina;				
-		
 	}
 
 	function hola()
