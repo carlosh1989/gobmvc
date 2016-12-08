@@ -1,13 +1,12 @@
 <?php
 require_once 'system/Controller.php';
-require 'system/Orm.php';
 
 class TrasladoController extends Controller
 {
     public function __CONSTRUCT()
     {
         $this->traslado = $this->modelo('traslado');
-        $this->orm = new Orm();
+        $this->orm = $this->modelo('orm');
     }
     
     public function index()
