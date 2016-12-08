@@ -1,5 +1,5 @@
 <?php
-require_once("app/model/db.class.php");
+require_once("app/config/Orm.php");
 class Orm
 {
  //nombre base de datos
