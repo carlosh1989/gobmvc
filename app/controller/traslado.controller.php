@@ -12,12 +12,12 @@ class TrasladoController extends MvcController
     public function index()
     {
         $this->decretos = $this->orm->todo('decretos');
-        $this->vista('all', 'Traslados');
+        $this->vista('traslado/all', 'Traslados');
     }
 
     public function create()
     {
-        $this->vista('create', 'Crear Nuevo Decreto');
+        $this->vista('traslado/create', 'Crear Nuevo Decreto');
     }
 
     public function store()

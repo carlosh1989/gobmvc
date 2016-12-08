@@ -50,7 +50,7 @@ class MvcController {
             $nombre_archivo = preg_replace('/\.php$/', '', array_pop(explode('/', $nombre_archivo)));
         }
         ob_start();
-        include 'app/views/modules/traslado/'.$vista.'.php';
+        include 'app/views/modules/'.$vista.'.php';
         $table = ob_get_clean();
         $pagina = preg_replace('/\#CONTENIDO\#/ms', $table, $pagina); 	
         echo $pagina;

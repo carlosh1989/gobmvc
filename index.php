@@ -17,4 +17,6 @@ require 'app/controller/'.$nombreControlador.'.controller.php';
 $nombreClase = ucfirst($nombreControlador).'Controller';        
 $controller = new $nombreClase();
 $controller->$metodo(); 
-//sadadaaaa
+
+//crear template desde bash
+//http://stackoverflow.com/questions/6214743/create-new-file-from-templates-with-bash-script
