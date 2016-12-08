@@ -1,6 +1,8 @@
 <?php
 // Dividimos la URL.
-$requestURI = explode( '/', $_SERVER['REQUEST_URI'] );
+
+list($control,$parametros) = explode('?', $_SERVER['REQUEST_URI']);
+$requestURI = explode( '/', $control );
 // Eliminamos los espacios del principio y final
 // y recalculamos los índices del vector.
 $requestURI = array_values( array_filter( $requestURI ) );
@@ -15,4 +17,4 @@ require 'app/controller/'.$nombreControlador.'.controller.php';
 $nombreClase = ucfirst($nombreControlador).'Controller';        
 $controller = new $nombreClase();
 $controller->$metodo(); 
-//asdassadd
+//sadad

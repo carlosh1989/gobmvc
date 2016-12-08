@@ -16,7 +16,6 @@ class DependenciaController extends MvcController{
     
     public function principal(){
         ob_start();
-               
         include 'app/views/modules/dependencia_index.php';                
         $table = ob_get_clean();    
         $this->pagina = $this->replace_content('/\#CONTENIDO\#/ms', $table , $this->pagina);        

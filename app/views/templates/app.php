@@ -8,12 +8,12 @@
 
     <title>GOB</title>
     <link href="<?= $this->baseUrl ?>assets1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl ?>assets1/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl ?>assets1/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl ?>assets1/css/animate.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl ?>assets1/css/style.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl ?>assets1/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl ?>assets1/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?= $this->baseUrl() ?>assets1/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="<?= $this->baseUrl() ?>assets1/css/animate.css" rel="stylesheet">
+    <link href="<?= $this->baseUrl() ?>assets1/css/style.css" rel="stylesheet">
+    <link href="<?= $this->baseUrl() ?>assets1/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="<?= $this->baseUrl() ?>assets1/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
 </head>
 
@@ -85,21 +85,21 @@
 
 
     <!-- Mainly scripts -->
-    <script src="<?= $this->baseUrl ?>assets1/js/jquery-2.1.1.js"></script>
-    <script src="<?= $this->baseUrl ?>assets1/js/bootstrap.min.js"></script>
-    <script src="<?= $this->baseUrl ?>assets1/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="<?= $this->baseUrl ?>assets1/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/jquery-2.1.1.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/bootstrap.min.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <script src="<?= $this->baseUrl ?>assets1/js/plugins/dataTables/datatables.min.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/plugins/dataTables/datatables.min.js"></script>
     <!-- Custom and plugin javascript -->
-    <script src="<?= $this->baseUrl ?>assets1/js/inspinia.js"></script>
-    <script src="<?= $this->baseUrl ?>assets1/js/plugins/pace/pace.min.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/inspinia.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/plugins/pace/pace.min.js"></script>
 
     <!-- Nestable List -->
-    <script src="<?= $this->baseUrl ?>assets1/js/plugins/nestable/jquery.nestable.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/plugins/nestable/jquery.nestable.js"></script>
 
     <!-- iCheck -->
-    <script src="<?= $this->baseUrl ?>assets1/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="<?= $this->baseUrl() ?>assets1/js/plugins/iCheck/icheck.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({

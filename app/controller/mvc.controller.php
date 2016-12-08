@@ -3,6 +3,17 @@ session_start();
 require 'app/model/privilegios.class.php';
 class MvcController {   	   
   
+	public function __contruct()
+	{
+		
+	}
+
+	public function baseUrl()
+	{
+		$base = 'http://localhost/gobmvc/';
+		return $base;
+	}
+
 	function load_template($modulo){
 		$pagina = $this->load_page('app/views/pageMenu1.php');
 		
@@ -23,11 +34,12 @@ class MvcController {
 
     function vista($vista, $titulo)
     {
-    	$this->baseUrl = "http://localhost/gobmvc/";
+    	$this->baseUrl = $this->baseUrl();
     	ob_start();
         include  'app/views/templates/app.php';
         $pagina = ob_get_clean();
-        $menu = file_get_contents('app/views/templates/menu.php');
+        include('app/views/templates/menu.php');
+        $menu = ob_get_clean();
         $pagina = preg_replace('/\#TITULO\#/ms', $titulo, $pagina);
         $pagina = preg_replace('/\#MENU\#/ms', $menu, $pagina);
         
@@ -57,17 +69,19 @@ class MvcController {
         $krumo->dump($arreglo);
     }
 	
-	function ir($url)
+	function ir($url,$data=null)
 	{
-        header('Location: '.$url.'.php');
-	}
-	function ir_con_datos($url,$data)
-	{
-		$final = $url . ".php?" . http_build_query($data);
+		$final = $this->baseUrl().''.$url . "?" . http_build_query($data);
 		$query = urlencode(serialize($data));
         header('Location: '.$final);
 	}
-
+/*	function ir_con_datos($url,$data=null)
+	{
+		$final = $this->baseUrl().''.$url . "?" . http_build_query($data);
+		$query = urlencode(serialize($data));
+        header('Location: '.$final);
+	}
+*/
     function vista2($vista, $titulo)
     {
         $pagina = file_get_contents('app/views/layouts/app.php');

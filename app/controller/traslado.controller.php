@@ -23,7 +23,7 @@ class TrasladoController extends MvcController
     public function store()
     {
         $this->orm->guardar('decretos', $_POST);
-        $this->ir('traslado');
+        $this->ir('index.php/traslado/index');
     }
     
     public function eliminar()

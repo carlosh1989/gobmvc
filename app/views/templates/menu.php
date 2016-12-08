@@ -20,7 +20,7 @@
                 <li class="active">
                     <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Entidades</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level collapse">                        
-                        <li class="active"><a href="dependencia.php">Dependencia</a></li>
+                        <li class="active"><a href="<?php echo $this->baseUrl ?>index.php/dependencia/principal">Dependencia</a></li>
                         <li><a href="accion_centralizada.php">Acción Centralizada</a></li>
                         <li><a href="accion_especifica.php">Acción Específica</a></li>
                         <li><a href="tipo_movimiento.php">Tipo Movimiento</a></li>                        
