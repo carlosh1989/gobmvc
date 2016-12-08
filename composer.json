@@ -10,8 +10,5 @@
             "name": "carlos silva",
             "email": "elmorochez22@gmail.com"
         }
-    ],
-    "require-dev": {
-        "kenjis/codeigniter-cli": "^0.1.0"
-    }
+    ]
 }
