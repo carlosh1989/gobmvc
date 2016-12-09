@@ -1,26 +1,24 @@
 <?php
 require_once 'system/Controller.php';
-require_once 'system/database.php';
 
 class TrasladoController extends Controller
 {
     public function __CONSTRUCT()
     {
         $this->traslado = $this->modelo('traslado');
-        $this->orm = new Database();
     }
     
     public function index()
     {
-        $this->decretos = $this->orm->todo('decretos');
+        $this->decretos = $this->traslado->todo('decretos');
         $this->vista('traslado/all', 'Traslados');
     }
 
     public function cosa()
     {
-        $data['numero'] = "jjjjjjjj";
-        $data['descripcion'] = "jjjjjjjj";
-        $this->orm->guardar('decretos',$data);
+        $data['numero'] = "++++++++++++";
+        $data['descripcion'] = "++++++++++++";
+        $this->traslado->guardar('decretos',$data);
         echo "listo";
     }
 

@@ -1,6 +1,6 @@
 <?php
 include_once('system/database.php');
-class Traslado
+class Traslado extends Database
 {
     private $pdo;
     public $id;
