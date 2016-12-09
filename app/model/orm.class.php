@@ -1,5 +1,5 @@
 <?php
-require_once("db.class.php");
+include_once "db.class.php";
 class Orm
 {
  //nombre base de datos

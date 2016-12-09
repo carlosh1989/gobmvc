@@ -1,5 +1,5 @@
 <?php
-require_once 'system/Controller.php';
+include_once 'system/Controller.php';
 
 class TrasladoController extends Controller
 {
