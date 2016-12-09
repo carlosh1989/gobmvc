@@ -1,5 +1,5 @@
 <?php
-include_once('system/database.php');
+include_once('system/Database.php');
 class Traslado extends Database
 {
     private $pdo;

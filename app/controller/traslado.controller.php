@@ -14,7 +14,7 @@ class TrasladoController extends Controller
         $this->vista('traslado/all', 'Traslados');
     }
 
-    public function cosa()
+    public function guardar()
     {
         $data['numero'] = "++++++++++++";
         $data['descripcion'] = "++++++++++++";
