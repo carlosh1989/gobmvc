@@ -1,12 +1,13 @@
 <?php
-include_once 'system/Controller.php';
+require_once 'system/Controller.php';
+require_once 'system/database.php';
 
 class TrasladoController extends Controller
 {
     public function __CONSTRUCT()
     {
-        $this->traslado = $this->modelo('traslado');
-        $this->orm = $this->modelo('orm');
+        //$this->traslado = $this->modelo('traslado');
+        $this->orm = new Database();
     }
     
     public function index()
@@ -15,7 +16,7 @@ class TrasladoController extends Controller
         $this->vista('traslado/all', 'Traslados');
     }
 
-    public function create()
+  /*  public function create()
     {
         $this->vista('traslado/create', 'Crear Nuevo Decreto');
     }
@@ -30,5 +31,5 @@ class TrasladoController extends Controller
     {
         $this->model->eliminar($_REQUEST['id']);
         header('Location: rol.php');
-    }
+    }*/
 }

@@ -25,10 +25,8 @@ class Modulo
 		try
 		{
 			$result = array();
-
 			$query = $this->pdo->prepare("SELECT * FROM modulo");
 			$query->execute();
-
 			return $query->fetchAll(PDO::FETCH_OBJ);
 		}
 		catch(Exception $e)

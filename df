@@ -1,0 +1,119 @@
+[33mcommit 7bea64d3a4e147ad6fb08946b3ae481a5761b46e[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Fri Dec 9 09:37:11 2016 -0400
+
+    agregada carpeta config en la carpeta raiz
+
+[33mcommit ea6a4feb8277d109129cc708f495e3250943f664[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 16:24:02 2016 -0400
+
+    no sirve el ORM cargando del la carpeta app/config/db.class.php
+
+[33mcommit d282b8cc78dd1787f4679fd8ae29e538f5dc910f[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 16:00:52 2016 -0400
+
+    agregando la carpeta systema en el que se agrego el archivo -Controller.php- y el -Orm.php- pero no funciona el ultimo proque no puede accder a la nueva carpta la cual tiene el archivo -config- con la baseUrl y la -database.php-
+
+[33mcommit 519b87ef1469227ef50cb100dccf7af401c71511[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 15:59:43 2016 -0400
+
+    agregando la carpeta systema en el que se agrego el archivo -Controller.php- y el -Orm.php- pero no funciona el ultimo proque no puede accder a la nueva carpta la cual tiene el archivo -config- con la baseUrl y la -database.php-
+
+[33mcommit a2dac26114b0bc214da0ef9e00a33bd1894ab091[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 14:23:13 2016 -0400
+
+    asdas
+
+[33mcommit 5fdf49e37b990dffce83619d16eb2e89673573b7[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 14:08:34 2016 -0400
+
+    se creo el archivo -box.sh- que enruta el reparador o revizar el controlador pasandole dos variables la funcion y luego nombre de controlador y a su vez se cambio el nombre de la carpeta -assets1- a -assets-
+
+[33mcommit 5508bcde59c0946dd5bb458b06e63c990e94e402[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 14:07:38 2016 -0400
+
+    se creo el archivo -box.sh- que enruta el reparador o revizar el controlador pasandole dos variables la funcion y luego nombre de controlador
+
+[33mcommit ece25eaacadbe2619fb28cd3bdc97033063c4363[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 13:02:08 2016 -0400
+
+    asd
+
+[33mcommit 4ae4e0125040873078b6952d0855bb7616632977[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 12:58:26 2016 -0400
+
+    agregada librerias kenjis/codeigniter-cli
+
+[33mcommit 50929580560fb2d6dd4bf19039d34b5035c90f08[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Thu Dec 8 12:44:25 2016 -0400
+
+    modificado el index para que pueda recibir parametros, se modifico la funcion -ir- en el controlador principal, se agregago la funcion -baseUrl- el cual se coloco en los templates en la funcion -vista- y se se agregao tambien en la funcion -ir-
+
+[33mcommit a1736179392a45e456547b4820f03a8ba6850748[m
+Author: carlos silva <elmorochez22@gmail.com>
+Date:   Wed Dec 7 15:13:08 2016 -0400
+
+    index.php
+
+[33mcommit 5ff7606ad23cc9216f1cf3727fe10d230f3ccc95[m
+Author: carlos silva <elmorochez22@gmail.com>
+Date:   Wed Dec 7 15:10:49 2016 -0400
+
+    index.php
+
+[33mcommit 472b7b650bace913989140a2bd256da0929deefd[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Wed Dec 7 11:39:29 2016 -0400
+
+    index.php se modifico y se agrego el .htaccess con modo rewrite http://localhost/gobmvc/traslado/guardar/param1/param2
+
+[33mcommit 969de5f78b0bdc9b6aceb7e9bcc2144dfa7d2533[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Wed Dec 7 09:41:07 2016 -0400
+
+    agregado en el orm la funcion guardar
+
+[33mcommit 45607967eac75bba7db96bbba1ced95a366c95dc[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Tue Dec 6 14:26:57 2016 -0400
+
+    agregado las funciones generales en el ORM solo faltaria por terminar la funcion store data
+
+[33mcommit 4bf63723b9a1507b007388cd21561fd404390938[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Mon Dec 5 16:26:31 2016 -0400
+
+    krumo
+
+[33mcommit d5f0051bbc1f7c22db74debd6f18a193fb7ecdf8[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Mon Dec 5 15:38:07 2016 -0400
+
+    asdasd
+
+[33mcommit 8bd58116e8ac38bf2ac02d49c530b6be8b1c2d6f[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Mon Dec 5 11:32:59 2016 -0400
+
+    se quito el principalcontroller
+
+[33mcommit 23a5bef32ac3e37c9452faada6a8870cd5347bde[m
+Author: Od@ <kennymartorres@kennymartorres>
+Date:   Mon Dec 5 11:31:10 2016 -0400
+
+    terminada la funcion de vista y vista2 y la funcion de cargar modelo load_model, se logro pasar las funciones a el mvc.controller.php y de esa forma tener los controladores mas limpios
+
+[33mcommit c266b7145eb7b2ac2c8e630de6498376425360d8[m
+Author: carlos silva <elmorochez22@gmail.com>
+Date:   Mon Dec 5 06:34:05 2016 -0400
+
+    subida

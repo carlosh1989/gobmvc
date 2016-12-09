@@ -1,19 +1,8 @@
 <?php
-include_once "db.class.php";
+require_once("db.class.php");
 class Orm
 {
- //nombre base de datos
-    private $dbname = "dbp";
- //nombre servidor
-    private $host = "localhost";
- //nombre usuarios base de datos
-    private $user = "postgres";
- //password usuario
-    private $pass = '123';
- //puerto postgreSql
-    private $port = 5432;
-    private $dbh;
-    public $pdo;
+ 
 
     public function __construct()
     {
