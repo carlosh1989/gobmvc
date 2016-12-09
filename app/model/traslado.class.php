@@ -1,5 +1,5 @@
 <?php
-include_once("db.class.php");
+include_once('system/database.php');
 class Traslado
 {
     private $pdo;
@@ -15,6 +15,7 @@ class Traslado
         } catch (Exception $e) {
             die($e->getMessage());
         }
+        $this->dbconn = $this->pdo->conectar();
     }
 
     public function actualizar($data)
@@ -55,52 +56,32 @@ class Traslado
 
     public function guardar($table,$array)
     {
-       $str = "insert into $table ";
-       $strn = "(";
-       $strv = " VALUES (";
-       while(list($name,$value) = each($array)) {
+        $str = "insert into $table ";
+        $strn = "(";
+        $strv = " VALUES (";
+        while(list($name,$value) = each($array)) {
 
-           if(is_bool($value)) {
-                    $strn .= "$name,";
-                    $strv .= ($value ? "true":"false") . ",";
-                    continue;
-            };
+        if(is_bool($value)) {
+        $strn .= "$name,";
+        $strv .= ($value ? "true":"false") . ",";
+        continue;
+        };
 
-           if(is_string($value)) {
-                    $strn .= "$name,";
-                    $strv .= "'$value',";
-                    continue;
-            }
-           if (!is_null($value) and ($value != "")) {
-                    $strn .= "$name,";
-                    $strv .= "$value,";
-                    continue;
-           }
-       }
-       $strn[strlen($strn)-1] = ')';
-       $strv[strlen($strv)-1] = ')';
-       $str .= $strn . $strv;
-echo $srt;
-        //echo $str;
-        //$query = $this->pdo->prepare($str);
-        //$query->execute();
-
-  /*      try {
-            $this->pdo->execute($str);
-        //$this->registrarRolAccion($data);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }*/
-
-        try {
-            $sql = "INSERT INTO decretos (numero, descripcion) 
-                    VALUES (?, ?)";
-
-            $this->pdo->prepare($sql)
-             ->execute(array($data["numero"],$data["descripcion"]));
-        //$this->registrarRolAccion($data);
-        } catch (Exception $e) {
-            die($e->getMessage());
+        if(is_string($value)) {
+        $strn .= "$name,";
+        $strv .= "'$value',";
+        continue;
         }
+        if (!is_null($value) and ($value != "")) {
+        $strn .= "$name,";
+        $strv .= "$value,";
+        continue;
+        }
+        }
+        $strn[strlen($strn)-1] = ')';
+        $strv[strlen($strv)-1] = ')';
+        $str .= $strn . $strv;
+
+        $result = pg_query($this->dbconn, $str) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
     }
 }

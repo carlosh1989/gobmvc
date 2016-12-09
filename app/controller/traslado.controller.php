@@ -6,7 +6,7 @@ class TrasladoController extends Controller
 {
     public function __CONSTRUCT()
     {
-        //$this->traslado = $this->modelo('traslado');
+        $this->traslado = $this->modelo('traslado');
         $this->orm = new Database();
     }
     
@@ -14,6 +14,14 @@ class TrasladoController extends Controller
     {
         $this->decretos = $this->orm->todo('decretos');
         $this->vista('traslado/all', 'Traslados');
+    }
+
+    public function cosa()
+    {
+        $data['numero'] = "jjjjjjjj";
+        $data['descripcion'] = "jjjjjjjj";
+        $this->orm->guardar('decretos',$data);
+        echo "listo";
     }
 
   /*  public function create()
