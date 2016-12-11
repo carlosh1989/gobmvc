@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>GOB</title>
-    <link href="<?= $this->baseUrl ?>assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl() ?>assets/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl() ?>assets/css/animate.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl() ?>assets/css/style.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl() ?>assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
-    <link href="<?= $this->baseUrl() ?>assets/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
+
+    <link href="http://localhost/gobmvc/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/gobmvc/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="http://localhost/gobmvc/assets/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="http://localhost/gobmvc/assets/css/animate.css" rel="stylesheet">
+    <link href="http://localhost/gobmvc/assets/css/style.css" rel="stylesheet">
+    <link href="http://localhost/gobmvc/assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="http://localhost/gobmvc/assets/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
 
 </head>
 
@@ -24,7 +25,7 @@
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             #MENU#
-  <div> <?php echo $content; ?> </div> 
+
         </div>
     </nav>
 
@@ -71,6 +72,7 @@
             </div>
         </div>
         #CONTENIDO#
+        <?php echo  $content?>
         <div class="footer">
             <div class="pull-right">
                 
@@ -85,21 +87,21 @@
 
 
     <!-- Mainly scripts -->
-    <script src="<?= $this->baseUrl() ?>assets/js/jquery-2.1.1.js"></script>
-    <script src="<?= $this->baseUrl() ?>assets/js/bootstrap.min.js"></script>
-    <script src="<?= $this->baseUrl() ?>assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="<?= $this->baseUrl() ?>assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/jquery-2.1.1.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/bootstrap.min.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
 
-    <script src="<?= $this->baseUrl() ?>assets/js/plugins/dataTables/datatables.min.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/plugins/dataTables/datatables.min.js"></script>
     <!-- Custom and plugin javascript -->
-    <script src="<?= $this->baseUrl() ?>assets/js/inspinia.js"></script>
-    <script src="<?= $this->baseUrl() ?>assets/js/plugins/pace/pace.min.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/inspinia.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/plugins/pace/pace.min.js"></script>
 
     <!-- Nestable List -->
-    <script src="<?= $this->baseUrl() ?>assets/js/plugins/nestable/jquery.nestable.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/plugins/nestable/jquery.nestable.js"></script>
 
     <!-- iCheck -->
-    <script src="<?= $this->baseUrl() ?>assets/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="http://localhost/gobmvc/assets/js/plugins/iCheck/icheck.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({

@@ -14,11 +14,16 @@ class TrasladoController extends Controller
         $this->vista('traslado/all', 'Traslados');
     }
 
+    public function create()
+    {
+        echo "sadsad";
+    }
+
     public function guardar()
     {
         $data['numero'] = "++++++++++++";
         $data['descripcion'] = "++++++++++++";
-        $this->traslado->guardar('decretos',$data);
+        $this->traslado->guardar('decretos', $data);
         echo "listo";
     }
 
