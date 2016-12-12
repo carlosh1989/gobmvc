@@ -38,7 +38,7 @@ class TrasladoController extends MvcController
 
     public function show()
     {
-        $decreto = $this->traslado->buscarDecreto(164);
+        $decreto = $this->traslado->buscarDetalles(164);
         echo "asdasd";
         $this->ver_arreglo($decreto);
         //$this->vista('show','Decreto');
