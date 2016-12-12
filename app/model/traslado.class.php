@@ -108,7 +108,7 @@ echo $srt;
     {
        try 
        {
-            $sql = "SELECT * FROM decretos join detalles on decretos.id=detalles.decreto_id where decretos.id = ?";
+            $sql = "SELECT * FROM decretos join detalles on decretos.id=detalles.decreto_id where decretos.id = ? LIMIT 1";
             $query = $this->pdo->prepare($sql);
             $query->execute(array($id));
             return $query->fetchAll(PDO::FETCH_OBJ);

@@ -39,9 +39,11 @@ class TrasladoController extends MvcController
     public function show()
     {
         $id = $_REQUEST['idDecreto'];
-        $decreto = $this->traslado->buscarDecreto($id);
-        $this->ver_arreglo($decreto);
-        //$this->vista('show','Decreto');
+        $this->decreto = $this->traslado->buscarDecreto($id);
+        //echo $decreto[0]->numero;
+        //$this->ver_arreglo($decreto);
+
+        $this->vista('show','Decreto');
     }
     
     public function eliminar()
