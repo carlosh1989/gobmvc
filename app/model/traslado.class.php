@@ -6,12 +6,12 @@ class Traslado extends Database
     public $id;
     public $nombre;
     public $descripcion;
-    
+    public $tabla = 'decretos';
     
     public function __construct()
     {
         try {
-            $this->pdo = new Database();
+            $this->pdo = new Database($tabla);
         } catch (Exception $e) {
             die($e->getMessage());
         }
@@ -54,29 +54,28 @@ class Traslado extends Database
     }
 
 
-    public function guardar($table,$array)
+    public function guardar($table, $array)
     {
         $str = "insert into $table ";
         $strn = "(";
         $strv = " VALUES (";
-        while(list($name,$value) = each($array)) {
+        while (list($name,$value) = each($array)) {
+            if (is_bool($value)) {
+                $strn .= "$name,";
+                $strv .= ($value ? "true":"false") . ",";
+                continue;
+            };
 
-        if(is_bool($value)) {
-        $strn .= "$name,";
-        $strv .= ($value ? "true":"false") . ",";
-        continue;
-        };
-
-        if(is_string($value)) {
-        $strn .= "$name,";
-        $strv .= "'$value',";
-        continue;
-        }
-        if (!is_null($value) and ($value != "")) {
-        $strn .= "$name,";
-        $strv .= "$value,";
-        continue;
-        }
+            if (is_string($value)) {
+                $strn .= "$name,";
+                $strv .= "'$value',";
+                continue;
+            }
+            if (!is_null($value) and ($value != "")) {
+                $strn .= "$name,";
+                $strv .= "$value,";
+                continue;
+            }
         }
         $strn[strlen($strn)-1] = ')';
         $strv[strlen($strv)-1] = ')';

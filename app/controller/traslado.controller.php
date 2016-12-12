@@ -7,16 +7,17 @@ class TrasladoController extends Controller
     {
         $this->traslado = $this->modelo('traslado');
     }
-    
+
     public function index()
     {
-        $this->decretos = $this->traslado->todo('decretos');
-        $this->vista('traslado/all', 'Traslados');
+        $data['titulo'] = "Decreto ( Traslado de Partida ) ";
+        $data['decretos'] = $this->traslado->todo('decretos');
+        $this->view('traslado/all', $data);
     }
 
     public function create()
     {
-        echo "sadsad";
+        $this->view('traslado/create');
     }
 
     public function guardar()

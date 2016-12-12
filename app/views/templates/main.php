@@ -15,7 +15,7 @@
     <link href="http://localhost/gobmvc/assets/css/style.css" rel="stylesheet">
     <link href="http://localhost/gobmvc/assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
     <link href="http://localhost/gobmvc/assets/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 
     <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
-            #MENU#
+           <?php echo $menu ?>
 
         </div>
     </nav>
@@ -54,7 +54,7 @@
         </div>
         <div class="row wrapper border-bottom white-bg page-heading">
             <div class="col-lg-10">
-                    <h2>#TITULO#</h2>
+                    <h2><?php echo $titulo ?></h2>
                     <!--ol class="breadcrumb">
                         <li>
                             <a href="index.html">Inicio</a>
@@ -71,7 +71,6 @@
 
             </div>
         </div>
-        #CONTENIDO#
         <?php echo  $content?>
         <div class="footer">
             <div class="pull-right">

@@ -20,7 +20,8 @@ class Template
     {
         if (array_key_exists('view_template_file', $this->vars)) {
             throw new Exception("Cannot bind variable called 'view_template_file'");
-        } extract($this->vars);
+        } 
+        extract($this->vars);
         ob_start();
         include($view_template_file);
         return ob_get_clean();

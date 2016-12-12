@@ -27,7 +27,7 @@
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                         <thead>
                             <tr>                                
-                                <th width="20%">Descripción</th>
+                                <th width="20%"><?php echo $decretos ?></th>
                                 <th width="40%">N° Decreto</th>
                                 <th width="40%">Tipo de Movimiento</th>
                                 <th width="10%">Editar</th>
@@ -35,17 +35,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                             <?php foreach($this->decretos as $p): ?>
+                                <?php foreach ($decretos as $link) : ?>
                                 <tr>
                                     
-                                    <td><?php echo $p->descripcion; ?></td>
-                                    <td><?php echo $p->numero; ?></td>
-                                    <td><?php echo $p->tipoMovimiento; ?></td> 
+                                    <td><?php echo $link->descripcion; ?></td>
+                                    <td><?php echo $link->numero; ?></td>
+                                    <td><?php echo $link->tipoMovimiento; ?></td> 
                                     <td>
-                                        <a href="?a=crud&id=<?php echo $p->id; ?>">Editar</a>
+                                        <a href="?a=crud&id=<?php echo $link->id; ?>">Editar</a>
                                     </td>
                                     <td>
-                                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?a=eliminar&id=<?php echo $p->id; ?>">Eliminar</a>
+                                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?a=eliminar&id=<?php echo $link->id; ?>">Eliminar</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

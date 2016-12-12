@@ -1,19 +1,63 @@
 <?php
 session_start();
 require 'app/model/privilegios.class.php';
+require_once ('system/View.php');
 
 class Controller
 {
-
   
     public function __contruct()
     {
+        $view = new Template();
     }
 
     public function baseUrl()
     {
         $base = 'http://localhost/gobmvc/';
         return $base;
+    }
+
+
+    private $vars = array();
+    public function __get($name)
+    {
+        return $this->vars[$name];
+    }
+
+    public function __set($name, $value)
+    {
+        if ($name == 'view_template_file') {
+            throw new Exception("Cannot bind variable named 'view_template_file'");
+        }
+        $this->vars[$name] = $value;
+    }
+
+    public function render($view_template_file)
+    {
+        if (array_key_exists('view_template_file', $this->vars)) {
+            throw new Exception("Cannot bind variable called 'view_template_file'");
+        }
+        extract($this->vars);
+        ob_start();
+        include($view_template_file);
+        return ob_get_clean();
+    }
+
+    public function view($vista, $array)
+    {
+        $view = new Template();
+        if ($array) {
+            foreach ($array as $name => $value) {
+                //$this->vars[$name] = $value;
+                $view->$name = $value;
+                echo $view->title;
+            }
+        }
+
+        $view->baseUrl = $this->baseUrl();
+        $view->menu = $view->render('app/views/templates/menu.php');
+        $view->content = $view->render('app/views/modules/'.$vista.'.php');
+        echo $view->render('app/views/templates/main.php');
     }
 
     public function vista($vista, $titulo, array $vars = array())
@@ -41,11 +85,11 @@ class Controller
         echo $pagina;
     }
 
-    function modelo($modelo)
+    function modelo($modelo,$tabla=null)
     {
         $nombreModel = 'app/model/'.$modelo.'.class.php';
         include $nombreModel;
-        return new $modelo();
+        return new $modelo($tabla);
     }
 
     function ver_arreglo($arreglo)
