@@ -23,10 +23,25 @@ class TrasladoController extends MvcController
     public function store()
     {
         extract($_POST);
+        $data['fecha'] = date('d').'/'.date('m').'/'.date('Y');
         $data['numero'] = $numero;
         $data['descripcion'] = $descripcion;
-        $this->orm->guardar('decretos',$data);
+        $data['observaciones'] = "";
+        $data['tipo_movimiento'] = 'Traslado';
+        $montototal1 = str_replace(".", "",$montoTotal);
+        $montototal2 = str_replace(",", ".",$montototal1);
+        $data['monto_total'] = $montototal2;
+        $data['estado'] = true;
+        $this->orm->guardar('decretos', $data);
         $this->ir('traslado');
+    }
+
+    public function show()
+    {
+        $decreto = $this->traslado->buscarDecreto(164);
+        echo "asdasd";
+        $this->ver_arreglo($decreto);
+        //$this->vista('show','Decreto');
     }
     
     public function eliminar()

@@ -10,6 +10,8 @@ if (isset($_GET["a"]) and $_GET["a"]=="create") {
         $controller->store();
 } else if (isset($_GET["a"]) and $_GET["a"]=="guardar") {
     $controller->guardar();
+}else if (isset($_GET["a"]) and $_GET["a"]=="show") {
+    $controller->show();
 } else {
     $controller->principal();
 }

@@ -103,4 +103,23 @@ echo $srt;
             die($e->getMessage());
         }
     }
+
+    public function buscarDecreto($id)
+    {
+       try 
+       {
+            $sql = "SELECT * FROM decretos LEFT JOIN detalles on decretos.id = detalles.decreto_id WHERE id = ?";
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } 
+        catch (Exception $e) 
+        {
+            die($e->getMessage());
+        }
+        $dbconn = pg_connect("host=localhost port=5432 dbname=dbp user=postgres password=123")
+        or die('NO HAY CONEXION: ' . pg_last_error());
+
+        $result = pg_query($dbconn, $str) or die('ERROR AL INSERTAR DATOS: ' . pg_last_error());
+    }
 }

@@ -26,10 +26,15 @@
                 <div class="table-responsive">
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
                         <thead>
-                            <tr>                                
+                            <tr>              
+                                <th width="40%">N° Decreto</th>  
+                                <th width="40%">Fecha</th>                    
                                 <th width="20%">Descripción</th>
-                                <th width="40%">N° Decreto</th>
+                                <th width="20%">Observaciones</th>
                                 <th width="40%">Tipo de Movimiento</th>
+                                <th width="40%">Estado</th>
+                                <th width="40%">Tipo Movimiento</th>
+                                <th width="40%">Monto Total</th>
                                 <th width="10%">Editar</th>
                                 <th width="10%">Eliminar</th>
                             </tr>
@@ -37,10 +42,14 @@
                         <tbody>
                              <?php foreach($this->decretos as $p): ?>
                                 <tr>
-                                    
-                                    <td><?php echo $p->descripcion; ?></td>
                                     <td><?php echo $p->numero; ?></td>
+                                    <td><?php echo $p->fecha; ?></td>
+                                    <td><?php echo $p->descripcion; ?></td>
+                                    <td><?php echo $p->observaciones; ?></td>
                                     <td><?php echo $p->tipoMovimiento; ?></td> 
+                                    <td><?php echo $p->estado; ?></td> 
+                                    <td><?php echo $p->tipo_movimiento; ?></td>
+                                    <td><?php echo $p->monto_total; ?></td>  
                                     <td>
                                         <a href="?a=crud&id=<?php echo $p->id; ?>">Editar</a>
                                     </td>

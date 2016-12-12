@@ -28,12 +28,22 @@
 
                 	
                 	<!--input type="hidden" name="tipoFormulario" value="persona_form" /-->
-                	<input type="hidden" name="id" value="<?php echo $this->decreto->id; ?>" />
-                    <div class="form-group"><label class="col-sm-2 control-label">Numero</label>
+                    <div class="form-group"><label class="col-sm-2 control-label">Fecha</label>
 
-                        <div class="col-sm-10"><input type="text" class="form-control" name="numero" required value="<?php echo $this->decreto->numero; ?>"></div>
+                    <div class="col-sm-10"><input type="text" class="form-control date" name="fecha" required value="<?php echo $this->decreto->fecha; ?>"></div>
                     </div>
                     <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Numero</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control numero" name="numero" required value="<?php echo $this->decreto->numero; ?>"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    <div class="form-group"><label class="col-sm-2 control-label">Monto</label>
+
+                        <div class="col-sm-10"><input type="text" class="form-control monto" name="montoTotal" required value="<?php echo $this->decreto->monto; ?>"></div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+
                     <div class="form-group"><label class="col-sm-2 control-label">Descripcion</label>
 
                         <div class="col-sm-10"><input type="text" class="form-control" name="descripcion" value="<?php echo $modulo->descripcion; ?>"></div>
@@ -50,3 +60,41 @@
         </div>
     </div>
   </div>
+
+  <script>
+$(document).ready(function(){
+  $('.date').mask('00/00/0000');
+  $('.numero').mask('000/00');
+  $('.date_time').mask('00/00/0000 00:00:00');
+  $('.cep').mask('00000-000');
+  $('.phone').mask('0000-0000');
+  $('.phone_with_ddd').mask('(00) 0000-0000');
+  $('.phone_us').mask('(000) 000-0000');
+  $('.mixed').mask('AAA 000-S0S');
+  $('.cpf').mask('000.000.000-00', {reverse: true});
+  $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
+  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+  $('.monto').mask("#.##0,00", {reverse: true});
+  $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+    translation: {
+      'Z': {
+        pattern: /[0-9]/, optional: true
+      }
+    }
+  });
+  $('.ip_address').mask('099.099.099.099');
+  $('.percent').mask('##0,00%', {reverse: true});
+  $('.clear-if-not-match').mask("00/00/0000", {clearIfNotMatch: true});
+  $('.placeholder').mask("00/00/0000", {placeholder: "__/__/____"});
+  $('.fallback').mask("00r00r0000", {
+      translation: {
+        'r': {
+          pattern: /[\/]/,
+          fallback: '/'
+        },
+        placeholder: "__/__/____"
+      }
+    });
+  $('.selectonfocus').mask("00/00/0000", {selectOnFocus: true});
+});
+  </script>

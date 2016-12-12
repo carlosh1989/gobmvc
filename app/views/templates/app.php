@@ -9,7 +9,7 @@
     <title>GOB</title>
 
     <link href="assets1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets1/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets1/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="assets1/css/animate.css" rel="stylesheet">
     <link href="assets1/css/style.css" rel="stylesheet">
@@ -20,6 +20,23 @@
 
 <body>
 
+    <!-- Mainly scripts -->
+    <script src="assets1/js/jquery-2.1.1.js"></script>
+    <script src="assets1/js/bootstrap.min.js"></script>
+    <script src="assets1/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="assets1/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="assets1/js/plugins/dataTables/datatables.min.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="assets1/js/inspinia.js"></script>
+    <script src="assets1/js/plugins/pace/pace.min.js"></script>
+
+    <!-- Nestable List -->
+    <script src="assets1/js/plugins/nestable/jquery.nestable.js"></script>
+
+    <!-- iCheck -->
+    <script src="assets1/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.js"></script>
 <div id="wrapper">
 
     <nav class="navbar-default navbar-static-side" role="navigation">
@@ -85,22 +102,6 @@
 </div>
 
 
-    <!-- Mainly scripts -->
-    <script src="assets1/js/jquery-2.1.1.js"></script>
-    <script src="assets1/js/bootstrap.min.js"></script>
-    <script src="assets1/js/plugins/metisMenu/jquery.metisMenu.js"></script>
-    <script src="assets1/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-
-    <script src="assets1/js/plugins/dataTables/datatables.min.js"></script>
-    <!-- Custom and plugin javascript -->
-    <script src="assets1/js/inspinia.js"></script>
-    <script src="assets1/js/plugins/pace/pace.min.js"></script>
-
-    <!-- Nestable List -->
-    <script src="assets1/js/plugins/nestable/jquery.nestable.js"></script>
-
-    <!-- iCheck -->
-    <script src="assets1/js/plugins/iCheck/icheck.min.js"></script>
         <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({
