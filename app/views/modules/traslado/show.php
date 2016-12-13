@@ -127,14 +127,14 @@
     <div class="row">
             <div class="col-lg-6 col-md-offset-6">
                 <div class="col-lg-6">
-                Monto actual
+                <p class="text-info">Monto actual</p>
                 <div class="divider"></div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet repellat deleniti nesciunt nihil maxime expedita, mollitia cum ut numquam harum ipsam, saepe eius aspernatur, iure sapiente laudantium blanditiis eos! Cum.
+
                 </div>
                 <div class="col-lg-6">
-                Monto Total
+                <p class="text-danger">Monto Total</p>
                 <div class="divider"></div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique voluptatibus quo ullam? Soluta delectus, eos expedita dolor sint eveniet dignissimos. Praesentium delectus impedit, ullam. Placeat quasi eligendi aspernatur, ullam itaque?
+                <?php echo $this->decreto->monto_total ?>
                 </div>
             </div>    
     </div>

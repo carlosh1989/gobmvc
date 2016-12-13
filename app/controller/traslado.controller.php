@@ -42,11 +42,12 @@ class TrasladoController extends MvcController
         $this->decreto = $this->orm->buscar('decretos',$id);
         $this->detallesMas = $this->traslado->buscarDetallesAumentos($id);
         $this->detallesMenos = $this->traslado->buscarDetallesDisminuciones($id);
-
+        $this->detallesSuma = $this->traslado->buscarDetallesSuma($id);
         //echo $decreto[0]->numero;
         //$this->ver_arreglo($this->detallesMas);
-        //$this->ver_arreglo($this->detallesMenos);
-        $this->vista('show', 'Decreto');
+        $this->ver_arreglo($this->detallesMenos);
+        $this->ver_arreglo($this->detallesSuma);
+        //$this->vista('show', 'Decreto');
     }
     
     public function eliminar()

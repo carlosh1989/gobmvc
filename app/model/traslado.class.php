@@ -104,7 +104,57 @@ echo $srt;
         }
     }
 
+    public function buscarDetallesSuma($id)
+    {
+       try 
+       {
+            //$sql = "SELECT * FROM detalles where decreto_id = ? AND detalles.traslado = true ORDER BY id desc" ;
+
+            $sql = "SELECT sum(monto) FROM detalles where decreto_id = ? ORDER BY id desc" ;
+            
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } 
+        catch (Exception $e) 
+        {
+            die($e->getMessage());
+        } 
+    }
+
     public function buscarDetallesAumentos($id)
+    {
+       try 
+       {
+            $sql = "SELECT * FROM detalles where decreto_id = ? AND detalles.traslado = true ORDER BY id desc" ;
+            
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } 
+        catch (Exception $e) 
+        {
+            die($e->getMessage());
+        } 
+    }
+
+    public function buscarDetallesDisminuciones($id)
+    {
+       try 
+       {
+            $sql = "SELECT * FROM detalles where decreto_id = ? AND detalles.traslado = false ORDER BY id desc" ;
+            
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } 
+        catch (Exception $e) 
+        {
+            die($e->getMessage());
+        } 
+    }
+
+/*    public function buscarDetallesAumentos($id)
     {
        try 
        {
@@ -134,5 +184,5 @@ echo $srt;
         {
             die($e->getMessage());
         }
-    }
+    }*/
 }
