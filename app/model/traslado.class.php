@@ -104,11 +104,28 @@ echo $srt;
         }
     }
 
-    public function buscarDecreto($id)
+    public function buscarDetallesAumentos($id)
     {
        try 
        {
-            $sql = "SELECT * FROM decretos join detalles on decretos.id=detalles.decreto_id where decretos.id = ? LIMIT 1";
+            $sql = "SELECT detalles.id, detalles.decreto_id, detalles.partida_id, detalles.dependencia_id, detalles.codigo_presupuestario, detalles.monto, detalles.traslado, detalles.estado FROM decretos LEFT JOIN detalles on decretos.id=detalles.decreto_id where decretos.id = ? AND detalles.traslado = true ORDER BY detalles.id desc" ;
+            
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            return $query->fetchAll(PDO::FETCH_OBJ);
+        } 
+        catch (Exception $e) 
+        {
+            die($e->getMessage());
+        }
+    }
+
+    public function buscarDetallesDisminuciones($id)
+    {
+       try 
+       {
+            $sql = "SELECT detalles.id, detalles.decreto_id, detalles.partida_id, detalles.dependencia_id, detalles.codigo_presupuestario, detalles.monto, detalles.traslado FROM decretos LEFT JOIN detalles on decretos.id=detalles.decreto_id where decretos.id = ? AND detalles.traslado = false ORDER BY detalles.id desc" ;
+            
             $query = $this->pdo->prepare($sql);
             $query->execute(array($id));
             return $query->fetchAll(PDO::FETCH_OBJ);

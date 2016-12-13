@@ -28,8 +28,8 @@ class TrasladoController extends MvcController
         $data['descripcion'] = $descripcion;
         $data['observaciones'] = "";
         $data['tipo_movimiento'] = 'Traslado';
-        $montototal1 = str_replace(".", "",$montoTotal);
-        $montototal2 = str_replace(",", ".",$montototal1);
+        $montototal1 = str_replace(".", "", $montoTotal);
+        $montototal2 = str_replace(",", ".", $montototal1);
         $data['monto_total'] = $montototal2;
         $data['estado'] = true;
         $this->orm->guardar('decretos', $data);
@@ -39,11 +39,14 @@ class TrasladoController extends MvcController
     public function show()
     {
         $id = $_REQUEST['idDecreto'];
-        $this->decreto = $this->traslado->buscarDecreto($id);
-        //echo $decreto[0]->numero;
-        //$this->ver_arreglo($decreto);
+        $this->decreto = $this->orm->buscar('decretos',$id);
+        $this->detallesMas = $this->traslado->buscarDetallesAumentos($id);
+        $this->detallesMenos = $this->traslado->buscarDetallesDisminuciones($id);
 
-        $this->vista('show','Decreto');
+        //echo $decreto[0]->numero;
+        //$this->ver_arreglo($this->detallesMas);
+        //$this->ver_arreglo($this->detallesMenos);
+        $this->vista('show', 'Decreto');
     }
     
     public function eliminar()
