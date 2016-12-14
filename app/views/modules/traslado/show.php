@@ -27,16 +27,31 @@
                         </ul>
                     </div>
                      <h2>Decreto N° <?php echo $this->decreto->numero ?></h2>
+                        <div class="row">
+                                <div class="col-lg-6 col-md-offset-6">
+                                    <div class="col-lg-6">
+                                    <p class="text-info">Monto actual</p>
+                                    <div class="divider"></div>
+                                    <?php echo $this->detallesSuma ?>
+                                    </div>
+                                    <div class="col-lg-6">
+                                    <p class="text-danger">Monto Total</p>
+                                    <div class="divider"></div>
+                                    <?php echo $this->decreto->monto_total ?>
+                                    </div>
+                                </div>    
+                        </div>
                 </div>
+
             <div class="ibox-content">
               <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#datos"><b class="text-muted">Datos</b></a></li>
-                <li><a class="fa fa-plus" data-toggle="tab" href="#aumentos"><b class="text-info"> Aumentos</b></a></li>
+                <li class=""><a data-toggle="tab" href="#datos"><b class="text-muted">DATOS</b></a></li>
+                <li class="active"><a class="fa fa-plus" data-toggle="tab" href="#aumentos"><b class="text-info"> Aumentos</b></a></li>
                 <li><a class="fa fa-minus" data-toggle="tab" href="#disminuciones"><b class="text-danger"> Disminuciones</b></a></li>
               </ul>
 
               <div class="tab-content">
-                <div id="datos" class="tab-pane fade in active">
+                <div id="datos" class="tab-pane fade in">
                 <br>
                   <h3>Decreto n° <?php echo $this->decreto->numero ?></h3>
                   <p><?php echo $this->decreto->descripcion ?></p>
@@ -51,10 +66,21 @@
                    <p class="text-danger">Monto Total: <?php echo $this->decreto->monto_total ?></p>
                   <label class="">Fecha:</label><?php echo $this->decreto->fecha; ?>
                 </div>
-                <div id="aumentos" class="tab-pane fade">
-                <br>
-                  <h3>Aumentos</h3>
+                <div id="aumentos" class="tab-pane fade in active">
+                    <hr>
                     <div class="table-responsive">
+                     <div class="col-lg-12">
+                         <div class="col-lg-2">
+                             <input placeholder="Codigo Presupuestario" type="text">
+                         </div>
+                         <div class="col-lg-2">
+                             <input placeholder="Monto" type="text">
+                         </div>
+                         <div class="col-lg-2">
+                             <button class="btn btn-info" type="submit">RECIBE</button>
+                         </div>
+                     </div>
+                     <hr><hr>
                         <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                                 <tr>              
@@ -83,10 +109,21 @@
                     </div>
                 </div>
                 <div id="disminuciones" class="tab-pane fade">
-                <br>
-                  <h3>Disminuciones</h3>
+                    <hr>
                     <div class="table-responsive">
-                        <table class="table table-striped table-bordered table-hover dataTables-example" >
+                     <div class="col-lg-12">
+                         <div class="col-lg-2">
+                             <input placeholder="Codigo Presupuestario" type="text">
+                         </div>
+                         <div class="col-lg-2">
+                             <input placeholder="Monto" type="text">
+                         </div>
+                         <div class="col-lg-2">
+                             <button class="btn btn-danger" type="submit">OTORGA</button>
+                         </div>
+                     </div>
+                     <hr><hr>
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                                 <tr>              
                                     <th width="45%">Codigo Presupuestario</th>               
@@ -120,23 +157,14 @@
               </div>
             </div>
             </div>
-
-
         </div>
     </div>
-    <div class="row">
-            <div class="col-lg-6 col-md-offset-6">
-                <div class="col-lg-6">
-                <p class="text-info">Monto actual</p>
-                <div class="divider"></div>
+</div>
+</div>
 
-                </div>
-                <div class="col-lg-6">
-                <p class="text-danger">Monto Total</p>
-                <div class="divider"></div>
-                <?php echo $this->decreto->monto_total ?>
-                </div>
-            </div>    
-    </div>
-</div>
-</div>
+  <script>
+$(document).ready(function(){
+  $('.money').mask('000.000.000.000.000,00', {reverse: true});
+  $('.monto').mask("#.##0,00", {reverse: true});
+});
+  </script>

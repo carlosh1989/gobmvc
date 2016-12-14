@@ -110,7 +110,7 @@ echo $srt;
        {
             //$sql = "SELECT * FROM detalles where decreto_id = ? AND detalles.traslado = true ORDER BY id desc" ;
 
-            $sql = "SELECT sum(monto) FROM detalles where decreto_id = ? ORDER BY id desc" ;
+            $sql = "SELECT monto FROM detalles where decreto_id = ? ORDER BY id desc" ;
             
             $query = $this->pdo->prepare($sql);
             $query->execute(array($id));

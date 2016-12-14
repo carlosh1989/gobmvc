@@ -45,9 +45,15 @@ class TrasladoController extends MvcController
         $this->detallesSuma = $this->traslado->buscarDetallesSuma($id);
         //echo $decreto[0]->numero;
         //$this->ver_arreglo($this->detallesMas);
-        $this->ver_arreglo($this->detallesMenos);
-        $this->ver_arreglo($this->detallesSuma);
-        //$this->vista('show', 'Decreto');
+        //$this->ver_arreglo($this->detallesMenos);
+        $monto_actual = 0;
+        foreach ($this->detallesSuma as $key => $monto) {
+            $monto_actual = $monto_actual + $monto->monto;
+        }
+
+        $this->detallesSuma = $monto_actual;
+        //$this->ver_arreglo($this->detallesSuma);
+        $this->vista('show', 'Decreto');
     }
     
     public function eliminar()

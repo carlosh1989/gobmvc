@@ -35,6 +35,7 @@
                                 <th width="40%">Estado</th>
                                 <th width="40%">Tipo Movimiento</th>
                                 <th width="40%">Monto Total</th>
+                                <th width="10%">Ver</th>                              
                                 <th width="10%">Editar</th>
                                 <th width="10%">Eliminar</th>
                             </tr>
@@ -51,21 +52,20 @@
                                     <td><?php echo $p->tipo_movimiento; ?></td>
                                     <td><?php echo $p->monto_total; ?></td>  
                                     <td>
-                                        <a href="?a=crud&id=<?php echo $p->id; ?>">Editar</a>
+                                    <a class="fa fa-search-plus fa-2x" href="?a=show&idDecreto=<?php echo $p->id; ?>"></a>
                                     </td>
                                     <td>
-                                        <a onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?a=eliminar&id=<?php echo $p->id; ?>">Eliminar</a>
+                                        <a class="fa fa-pencil fa-2x" href="?a=crud&id=<?php echo $p->id; ?>"></a>
+                                    </td>
+                                    <td>
+                                        <a class="fa fa-trash fa-2x" onclick="javascript:return confirm('¿Seguro de eliminar este registro?');" href="?a=eliminar&id=<?php echo $p->id; ?>"></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
-                        </tbody>
-                       
+                        </tbody> 
                     </table>
                 </div>
-
             </div>
-
-
         </div>
     </div>
 </div>
