@@ -81,7 +81,7 @@
                          </div>
                      </div>
                      <hr><hr>
-                        <table class="table table-striped table-bordered table-hover dataTables-example" >
+                  <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
                                 <tr>              
                                     <th width="45%">Codigo Presupuestario</th>               
