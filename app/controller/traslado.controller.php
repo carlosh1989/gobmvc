@@ -55,6 +55,11 @@ class TrasladoController extends MvcController
         //$this->ver_arreglo($this->detallesSuma);
         $this->vista('show', 'Decreto');
     }
+
+    public function agregarDetalle()
+    {
+        $this->ver_arreglo($_POST);
+    }
     
     public function eliminar()
     {

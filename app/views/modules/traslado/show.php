@@ -93,6 +93,7 @@
                             <tbody>
                                  <?php foreach($this->detallesMas as $p): ?>
                                     <tr>
+
                                         <td><?php echo $p->codigo_presupuestario; ?></td>
                                         <td><?php echo $p->monto; ?></td>
                                         <td>
@@ -112,15 +113,17 @@
                     <hr>
                     <div class="table-responsive">
                      <div class="col-lg-12">
+                     <form action="?a=agregarDetalle" method="POST">
                          <div class="col-lg-2">
-                             <input placeholder="Codigo Presupuestario" type="text">
+                             <input name="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">
                          </div>
                          <div class="col-lg-2">
-                             <input placeholder="Monto" type="text">
+                             <input name="monto" placeholder="Monto" type="text">
                          </div>
                          <div class="col-lg-2">
                              <button class="btn btn-danger" type="submit">OTORGA</button>
                          </div>
+                     </form>
                      </div>
                      <hr><hr>
                     <table class="table table-striped table-bordered table-hover dataTables-example" >

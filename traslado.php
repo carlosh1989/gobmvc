@@ -12,6 +12,8 @@ if (isset($_GET["a"]) and $_GET["a"]=="create") {
     $controller->guardar();
 }else if (isset($_GET["a"]) and $_GET["a"]=="show") {
     $controller->show();
+}else if (isset($_GET["a"]) and $_GET["a"]=="agregarDetalle") {
+    $controller->agregarDetalle();
 } else {
     $controller->principal();
 }
