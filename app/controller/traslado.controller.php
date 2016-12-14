@@ -53,6 +53,7 @@ class TrasladoController extends MvcController
 
         $this->detallesSuma = $monto_actual;
         //$this->ver_arreglo($this->detallesSuma);
+        //asdsa
         $this->vista('show', 'Decreto');
     }
     
