@@ -2,7 +2,9 @@
     "name": "kennymartorres/gobmvc",
     "require": {
         "mmucklo/krumo": "^0.5.7",
-        "squizlabs/php_codesniffer": "2.*"
+        "squizlabs/php_codesniffer": "2.*",
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "phpmd/phpmd" : "@stable"
     },
     "license": "MIT",
     "authors": [
@@ -12,3 +14,4 @@
         }
     ]
 }
+//https://styde.net/instalar-php-code-sniffer-en-sublime-text/

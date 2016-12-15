@@ -58,11 +58,11 @@ class TrasladoController extends MvcController
         $data['decreto_id'] = $idDecreto;
         $data['codigo_presupuestario'] = $codigo_presupuestario;
         $data['monto'] = $monto2;
-        $data['estado'] = TRUE;
+        $data['estado'] = true;
         $data['traslado'] = $traslado;
         $this->ver_arreglo($data);
         $monto_actual =  $this->traslado->sumaDetalles(164);
-        $monto_sumado = $monto_actual + $monto2; 
+        $monto_sumado = $monto_actual + $monto2;
         //$monto_sumado = $monto_sumado + 20000.45;
         echo $monto_sumado;
         echo "<hr>";
@@ -71,12 +71,8 @@ class TrasladoController extends MvcController
         $this->ver_arreglo($this->decreto);
         echo "<hr>";
 
-        if ($monto_sumado >= $this->decreto->monto_total) 
-        {
-
-        } 
-        else 
-        {
+        if ($monto_sumado >= $this->decreto->monto_total) {
+        } else {
             $this->orm->guardar('detalles', $data);
             echo "guardado";
         }
