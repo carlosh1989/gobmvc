@@ -39,7 +39,7 @@ class TrasladoController extends MvcController
     public function show()
     {
         $id = $_REQUEST['idDecreto'];
-        $this->decreto = $this->orm->buscar('decretos',$id);
+        $this->decreto = $this->orm->buscar('decretos', $id);
         $this->detallesMas = $this->traslado->buscarDetallesAumentos($id);
         $this->detallesMenos = $this->traslado->buscarDetallesDisminuciones($id);
         $this->detallesSuma = $this->traslado->buscarDetallesSuma($id);
@@ -58,7 +58,17 @@ class TrasladoController extends MvcController
 
     public function agregarDetalle()
     {
+        extract($_POST);
         $this->ver_arreglo($_POST);
+        $monto1 = str_replace(".", "", $monto);
+        $monto2 = str_replace(",", ".", $monto1);
+        echo $monto2;
+        $data['codigo_presupuestario'] = $codigo_presupuestario;
+        $data['monto'] = $monto2;
+        $data['estado'] = 1;
+        $data['traslado'] = $traslado;
+        $this->ver_arreglo($data);
+        //$this->orm->guardar('decretos', $data);
     }
     
     public function eliminar()

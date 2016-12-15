@@ -69,17 +69,20 @@
                 <div id="aumentos" class="tab-pane fade in active">
                     <hr>
                     <div class="table-responsive">
-                     <div class="col-lg-12">
-                         <div class="col-lg-2">
-                             <input placeholder="Codigo Presupuestario" type="text">
-                         </div>
-                         <div class="col-lg-2">
-                             <input placeholder="Monto" type="text">
-                         </div>
-                         <div class="col-lg-2">
-                             <button class="btn btn-info" type="submit">RECIBE</button>
-                         </div>
-                     </div>
+                        <form action="?a=agregarDetalle" method="POST">
+                        <input type="hidden" name="traslado" value="1">
+                         <div class="col-lg-12">
+                             <div class="col-lg-2">
+                                 <input name="codigo_presupuestario" class="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">
+                             </div>
+                             <div class="col-lg-2">
+                                 <input name="monto" class="monto" placeholder="Monto" type="text">
+                             </div>
+                             <div class="col-lg-2">
+                                 <button class="btn btn-info" type="submit">RECIBE</button>
+                             </div>
+                         </div>            
+                        </form>
                      <hr><hr>
                   <table class="table table-striped table-bordered table-hover dataTables-example" >
                             <thead>
@@ -115,10 +118,10 @@
                      <div class="col-lg-12">
                      <form action="?a=agregarDetalle" method="POST">
                          <div class="col-lg-2">
-                             <input name="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">
+                             <input class="codigo_presupuestario" name="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">
                          </div>
                          <div class="col-lg-2">
-                             <input name="monto" placeholder="Monto" type="text">
+                             <input class="monto" name="monto" placeholder="Monto" type="text">
                          </div>
                          <div class="col-lg-2">
                              <button class="btn btn-danger" type="submit">OTORGA</button>
@@ -169,5 +172,6 @@
 $(document).ready(function(){
   $('.money').mask('000.000.000.000.000,00', {reverse: true});
   $('.monto').mask("#.##0,00", {reverse: true});
+  $('.codigo_presupuestario').mask('00-00-00-00,00-00-00');
 });
   </script>
