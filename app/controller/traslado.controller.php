@@ -42,19 +42,11 @@ class TrasladoController extends MvcController
         $this->decreto = $this->orm->buscar('decretos', $id);
         $this->detallesMas = $this->traslado->buscarDetallesAumentos($id);
         $this->detallesMenos = $this->traslado->buscarDetallesDisminuciones($id);
-        $this->detallesSuma = $this->traslado->buscarDetallesSuma($id);
-        //echo $decreto[0]->numero;
-        //$this->ver_arreglo($this->detallesMas);
-        //$this->ver_arreglo($this->detallesMenos);
-        $monto_actual = 0;
-        foreach ($this->detallesSuma as $key => $monto) {
-            $monto_actual = $monto_actual + $monto->monto;
-        }
-
-        $this->detallesSuma = $monto_actual;
+        $this->detallesSuma = $this->traslado->sumaDetalles(164);
         //$this->ver_arreglo($this->detallesSuma);
         $this->vista('show', 'Decreto');
     }
+
 
     public function agregarDetalle()
     {
@@ -63,11 +55,31 @@ class TrasladoController extends MvcController
         $monto1 = str_replace(".", "", $monto);
         $monto2 = str_replace(",", ".", $monto1);
         echo $monto2;
+        $data['decreto_id'] = $idDecreto;
         $data['codigo_presupuestario'] = $codigo_presupuestario;
         $data['monto'] = $monto2;
-        $data['estado'] = 1;
+        $data['estado'] = TRUE;
         $data['traslado'] = $traslado;
         $this->ver_arreglo($data);
+        $monto_actual =  $this->traslado->sumaDetalles(164);
+        $monto_sumado = $monto_actual + $monto2; 
+        //$monto_sumado = $monto_sumado + 20000.45;
+        echo $monto_sumado;
+        echo "<hr>";
+        echo $idDecreto;
+        $this->decreto = $this->orm->buscar('decretos', $idDecreto);
+        $this->ver_arreglo($this->decreto);
+        echo "<hr>";
+
+        if ($monto_sumado >= $this->decreto->monto_total) 
+        {
+
+        } 
+        else 
+        {
+            $this->orm->guardar('detalles', $data);
+            echo "guardado";
+        }
         //$this->orm->guardar('decretos', $data);
     }
     

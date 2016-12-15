@@ -70,7 +70,8 @@
                     <hr>
                     <div class="table-responsive">
                         <form action="?a=agregarDetalle" method="POST">
-                        <input type="hidden" name="traslado" value="1">
+                        <input type="hidden" name="idDecreto" value="<?php echo $this->decreto->id ?>">
+                        <input type="hidden" name="traslado" value="TRUE">
                          <div class="col-lg-12">
                              <div class="col-lg-2">
                                  <input name="codigo_presupuestario" class="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">

@@ -154,6 +154,28 @@ echo $srt;
         } 
     }
 
+    public function sumaDetalles($id)
+    {
+       try 
+       {
+            $sql = "SELECT * FROM detalles where decreto_id = ? ORDER BY id desc" ;
+            
+            $query = $this->pdo->prepare($sql);
+            $query->execute(array($id));
+            $this->detallesSuma = $query->fetchAll(PDO::FETCH_OBJ);
+            $monto_actual = 0;
+            foreach ($this->detallesSuma as $key => $monto) {
+                $monto_actual = $monto_actual + $monto->monto;
+            }
+            return $this->detallesSuma = $monto_actual;
+            } 
+            catch (Exception $e) 
+            {
+                die($e->getMessage());
+            } 
+    }
+
+
 /*    public function buscarDetallesAumentos($id)
     {
        try 
