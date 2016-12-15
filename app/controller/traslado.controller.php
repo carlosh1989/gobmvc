@@ -28,7 +28,7 @@ class TrasladoController extends Controller
         echo "listo";
     }
 
-  /*  public function create()
+    /*  public function create()
     {
         $this->vista('traslado/create', 'Crear Nuevo Decreto');
     }
