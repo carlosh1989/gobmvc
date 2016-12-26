@@ -71,8 +71,12 @@ class TrasladoController extends MvcController
         $this->ver_arreglo($this->decreto);
         echo "<hr>";
 
-        if ($monto_sumado >= $this->decreto->monto_total) {
-        } else {
+        if ($monto_sumado >= $this->decreto->monto_total) 
+        {
+            echo "monto mayor";
+        } 
+        else 
+        {
             $this->orm->guardar('detalles', $data);
             echo "guardado";
         }

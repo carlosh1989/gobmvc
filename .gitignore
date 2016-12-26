@@ -1,1 +1,13 @@
 /vendor/
+# A040830F7FAC5991
+# C2518248EEA14886
+# 1397BC53640DB551
+
+# gpg --keyserver keyserver.ubuntu.com --recv A040830F7FAC5991
+# gpg --export --armor A040830F7FAC5991 | sudo apt-key add -
+
+# gpg --keyserver keyserver.ubuntu.com --recv C2518248EEA14886
+# gpg --export --armor C2518248EEA14886 | sudo apt-key add -
+
+# gpg --keyserver keyserver.ubuntu.com --recv 1397BC53640DB551
+# gpg --export --armor 1397BC53640DB551 | sudo apt-key add -
