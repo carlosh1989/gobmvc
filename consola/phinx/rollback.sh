@@ -1,0 +1,1 @@
+php ./vendor/bin/phinx rollback -c config-phinx.php

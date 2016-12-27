@@ -1,4 +1,5 @@
 <?php
+define('DB_ADAPTER', 'pgsql');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'frame');
 define('DB_USER', 'postgres');

@@ -1,0 +1,1 @@
+php ./vendor/bin/phinx create $1 -c config-phinx.php

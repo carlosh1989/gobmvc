@@ -9,7 +9,7 @@ return [
     'default_migration_table' => 'phinxlog',
     'default_database' => 'dev',
     'dev' => [
-      'adapter' => 'pgsql',
+      'adapter' => DB_ADAPTER,
       'host' => DB_HOST,
       'name' => DB_NAME,
       'user' => DB_USER,
