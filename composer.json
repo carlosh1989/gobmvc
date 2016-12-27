@@ -2,7 +2,9 @@
     "name": "kennymartorres/gobmvc",
     "require": {
         "mmucklo/krumo": "^0.5.7",
-        "squizlabs/php_codesniffer": "2.*"
+        "squizlabs/php_codesniffer": "2.*",
+        "illuminate/database": "5.2.*",
+        "robmorgan/phinx": "0.5.*"
     },
     "license": "MIT",
     "authors": [
