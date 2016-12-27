@@ -117,17 +117,21 @@
                     <hr>
                     <div class="table-responsive">
                      <div class="col-lg-12">
-                     <form action="?a=agregarDetalle" method="POST">
-                         <div class="col-lg-2">
-                             <input class="codigo_presupuestario" name="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">
-                         </div>
-                         <div class="col-lg-2">
-                             <input class="monto" name="monto" placeholder="Monto" type="text">
-                         </div>
-                         <div class="col-lg-2">
-                             <button class="btn btn-danger" type="submit">OTORGA</button>
-                         </div>
-                     </form>
+                        <form action="?a=agregarDetalle" method="POST">
+                        <input type="hidden" name="idDecreto" value="<?php echo $this->decreto->id ?>">
+                        <input type="hidden" name="traslado" value="FALSE">
+                         <div class="col-lg-12">
+                             <div class="col-lg-2">
+                                 <input name="codigo_presupuestario" class="codigo_presupuestario" placeholder="Codigo Presupuestario" type="text">
+                             </div>
+                             <div class="col-lg-2">
+                                 <input name="monto" class="monto" placeholder="Monto" type="text">
+                             </div>
+                             <div class="col-lg-2">
+                                 <button class="btn btn-danger" type="submit">OTORGA</button>
+                             </div>
+                         </div>            
+                        </form>
                      </div>
                      <hr><hr>
                     <table class="table table-striped table-bordered table-hover dataTables-example" >
