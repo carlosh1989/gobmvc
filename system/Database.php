@@ -1,18 +1,20 @@
 <?php
+require ('config/db.php');
 class Database extends PDO
 {
  
  //nombre base de datos
-    private $dbname = "dbp";
+    private $dbname = DB_NAME;
  //nombre servidor
-    private $host = "localhost";
+    private $host = DB_HOST;
  //nombre usuarios base de datos
-    private $user = "postgres";
+    private $user = DB_USER;
  //password usuario
-    private $pass = '123';
+    private $pass = DB_PASSWORD;
  //puerto postgreSql
-    private $port = 5432;
+    private $port = DB_PORT;
     private $dbh;
+
  
  //creamos la conexión a la base de datos prueba
     public function __construct()

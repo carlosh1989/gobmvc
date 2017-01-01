@@ -4,7 +4,7 @@
         <div class="col-lg-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-title">
-                    <a href="<?php echo $this->baseUrl ?>index.php/traslado/create">Nuevo Traslado</a> 
+                    <a href="<?= baseUrl ?>index.php/traslado/create">Nuevo Traslado</a> 
                     <div class="ibox-tools">
                         <a class="collapse-link">
                             <i class="fa fa-chevron-up"></i>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'app/model/privilegios.class.php';
+require ('config/config.php');
 require_once ('system/View.php');
 
 class Controller
@@ -13,7 +14,7 @@ class Controller
 
     public function baseUrl()
     {
-        $base = 'http://localhost/gobmvc/';
+        $base = baseUrl;
         return $base;
     }
 
